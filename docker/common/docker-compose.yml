@@ -60,6 +60,8 @@ services:
       REDIS_PORT:          "6379"
       ZIPKIN_PORT:         "9411"
       ENCRYPT_KEY:       "IMSYMMETRIC"
+     #example_property:  "test"
+      example.property:  "test"
   organizationservice:
     image: johncarnell/tmx-organization-service:chapter9
     ports:
@@ -96,6 +98,7 @@ services:
   #Attention:  Replace the value in the “command” attribute with the value supplied to you from Papertrail
   logspout:
     image: gliderlabs/logspout
-    command: syslog://logs5.papertrailapp.com:51601
+#   command: syslog://logs5.papertrailapp.com:51601
+    command: syslog://logs4.papertrailapp.com:26856
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
